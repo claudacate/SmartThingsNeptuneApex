@@ -189,7 +189,7 @@ def initialize() {
 	def typeMap = [
     	"Temp": "Neptune Apex Temp Probe",
         "feedMode": "Neptune Apex Feed Mode",
-        "outlet": "Neptune Apex Outlet",
+        "virtual": "Neptune Apex Outlet",
     ]
     
     objects.each { dni, obj ->
@@ -301,14 +301,14 @@ def setApexOutput(did, value) {
     sendHubCommand(new physicalgraph.device.HubAction(params, "$ip:80", [callback: handleCommandResponse]))
 }
 
-def outletOn(did) {
+def virtualOn(did) {
 	setApexOutput(did, 2)
 }
 
-def outletOff(did) {
+def virtualOff(did) {
 	setApexOutput(did, 1)
 }
 
-def outletAuto(did) {
+def virtualAuto(did) {
 	setApexOutput(did, 0)
 }
