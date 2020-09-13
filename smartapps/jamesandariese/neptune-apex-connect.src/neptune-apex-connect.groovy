@@ -127,7 +127,7 @@ def page2() {
                 	switchesForTypes("Temp Probes", "Temp", atomicState.status["istat"]["inputs"])
                	}
                 section("Outlets") {
-                	switchesForTypes("Outlets", "outlet", atomicState.status["istat"]["outputs"])
+                	switchesForTypes("Outlets", "virtual", atomicState.status["istat"]["outputs"])
                 }
                 section("Cool") {
                 	paragraph("That's all!")
