@@ -301,14 +301,14 @@ def setApexOutput(did, value) {
     sendHubCommand(new physicalgraph.device.HubAction(params, "$ip:80", [callback: handleCommandResponse]))
 }
 
-def virtualOn(did) {
+def outletOn(did) {
 	setApexOutput(did, 2)
 }
 
-def virtualOff(did) {
+def outletOff(did) {
 	setApexOutput(did, 1)
 }
 
-def virtualAuto(did) {
+def outletAuto(did) {
 	setApexOutput(did, 0)
 }
