@@ -90,9 +90,9 @@ def updateFromApex(status) {
     def statusName = status["status"][0]
     
     if (statusName == "AON") {
-        sendEvent(name: "switch", value: "autoOn")
+        sendEvent(name: "switch", value: "on")
     } else if (statusName == "AOF") {
-        sendEvent(name: "switch", value: "autoOff")
+        sendEvent(name: "switch", value: "off")
     } else if (statusName == "ON") {
         sendEvent(name: "switch", value: "on")
     } else if (statusName == "OFF") {
