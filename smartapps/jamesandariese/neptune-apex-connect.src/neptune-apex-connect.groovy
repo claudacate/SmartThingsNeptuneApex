@@ -302,11 +302,11 @@ def setApexOutput(did, value) {
 }
 
 def outletOn(did) {
-	setApexOutput(did, 2)
+	setApexOutput(did, 0)
 }
 
 def outletOff(did) {
-	setApexOutput(did, 1)
+	setApexOutput(did, 0)
 }
 
 def outletAuto(did) {
