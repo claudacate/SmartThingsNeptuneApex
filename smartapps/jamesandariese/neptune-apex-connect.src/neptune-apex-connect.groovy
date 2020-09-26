@@ -126,8 +126,11 @@ def page2() {
                 section("Temp Probes") {
                 	switchesForTypes("Temp Probes", "Temp", atomicState.status["istat"]["inputs"])
                	}
-                section("Outlets") {
+                section("Virtual Outlets") {
                 	switchesForTypes("Outlets", "virtual", atomicState.status["istat"]["outputs"])
+		}
+		section("Outlets") {
+                	switchesForTypes("Outlets", "outlet", atomicState.status["istat"]["outputs"])
                 }
                 section("Cool") {
                 	paragraph("That's all!")
@@ -189,7 +192,8 @@ def initialize() {
 	def typeMap = [
     	"Temp": "Neptune Apex Temp Probe",
         "feedMode": "Neptune Apex Feed Mode",
-        "virtual": "Neptune Apex Outlet",
+        "virtual": "Neptune Apex virtual Outlet",
+	"outlet": "Neptune Apex Outlet",	
     ]
     
     objects.each { dni, obj ->
@@ -306,7 +310,7 @@ def outletOn(did) {
 }
 
 def outletOff(did) {
-	setApexOutput(did, 0)
+	setApexOutput(did, 1)
 }
 
 def outletAuto(did) {
